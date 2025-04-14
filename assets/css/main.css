@@ -3,8 +3,8 @@
 :root {
     --heading-font: 'Unna', serif;
     --secondary-font: 'Urbanist', sans-serif;
-    --primary-color: #39946c;
-    --secondary-color: #134644;
+    --primary-color: #fd6c35;
+    --secondary-color: #c41f0a;
     --heading-color: #060606;
     --text-color: #666;
     --white-color: #fff;
@@ -118,7 +118,7 @@ header {
 
 header .navbar {
     border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-    padding: 30px 0px;
+    padding: 0px 0px;
 }
 
 .menu_fixed {
@@ -236,6 +236,10 @@ header .navbar {
     color: #fff;
 }
 
+.navbar-brand img {
+    max-width: 200px;
+}
+
 /* hero section */
 
 .hero-sec {
@@ -243,7 +247,7 @@ header .navbar {
     background-size: cover;
     position: relative;
     z-index: 1;
-    padding-top: 160px;
+    padding-top: 130px;
     margin-bottom: 300px;
 }
 
@@ -260,7 +264,7 @@ header .navbar {
 }
 
 .hero-sec .banner-content {
-    padding-bottom: 80px;
+    padding-bottom: 20px;
 }
 
 .sub-heading {
@@ -279,8 +283,8 @@ header .navbar {
 
 .hero-sec .banner-content h1 {
     font-size: 60px;
-    line-height: 70px;
-    margin-bottom: 30px;
+    line-height: 1;
+    margin-bottom: 20px;
     color: #fff;
     font-weight: 700;
     text-transform: capitalize;
@@ -325,8 +329,14 @@ header .navbar {
     background: var(--secondary-color);
 }
 
-.hero-sec .banner-img-round {
+.hero-sec .bannerimg {
     margin-bottom: -100px;
+}
+
+@media (width >=992px) {
+    .col-gap {
+        column-gap: 30px;
+    }
 }
 
 /* About Section */
@@ -346,13 +356,14 @@ header .navbar {
     left: 0px;
     top: 0px;
     background: #F9F9F9;
-    background-image: url(../images/book-bg.png);
-    background-size: 120% 100%;
-    opacity: .5;
-    width: 36%;
+    background-image: url(../images/back1.png);
+    background-size: 111% 117%;
+    background-position: 51% 30%;
+    background-repeat: no-repeat;
+    opacity: .1;
+    width: 34%;
     height: 100%;
-    border-radius: 0px 100px 100px 0px;
-    z-index: -1;
+    z-index: -2;
 }
 
 .about-sec:before {
@@ -360,51 +371,79 @@ header .navbar {
     content: "";
     left: 0px;
     top: 0px;
-    background: #1c1c1c;
-    background-size: 120% 100%;
-    opacity: .85;
-    width: 36%;
+    background: rgba(255, 255, 255, 0.5);
+    background-size: 120% 120%;
+    width: 34%;
     height: 100%;
-    border-radius: 0px 100px 100px 0px;
     z-index: -1;
+}
+
+.about-overlay.av2 {
+    background-image: url(../images/back2.png);
 }
 
 .about-overlay.av2,
 .about-sec.as2::before {
     left: unset;
     right: 0px;
-    border-radius: 100px 0 0 100px;
+}
+
+.aboutimg img {
+    filter: drop-shadow(6px 6px 1px rgba(0, 0, 0, 0.3));
 }
 
 .about-content h2 {
     margin-bottom: 20px;
+    font-size: 3.2vw;
+    text-shadow: 3px 3px 0 rgba(196, 32, 10, 0.2);
+    font-weight: 900;
+    font-family: var(--secondary-font);
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.author-sec .about-content h2 {
+    font-size: 3vw;
 }
 
 .font-lg {
     font-size: 40px;
     line-height: 55px;
+    font-weight: 800;
     font-family: var(--theme-heading-font);
+    color: #343a40;
+    text-shadow: 2px 2px 0 rgba(196, 32, 10, 0.2);
+    text-transform: uppercase;
 }
 
 .about-sec2 {
-    background: url(../images/book-banner.png) no-repeat;
-    background-position-x: center;
-    background-position-y: top;
-    background-size: contain;
+    background: #ffffff;
     position: relative;
     z-index: 1;
 }
 
-.about-sec2::before {
+.about-sec2::before,
+.about-sec2::after {
     position: absolute;
     content: "";
-    left: 0px;
     top: 0px;
-    width: 100%;
+    width: 47%;
     height: 100%;
-    background: #ffffff;
-    opacity: .85;
     z-index: -1;
+    opacity: .08;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.about-sec2::before {
+    left: 3%;
+    background-image: url(../images/bookcover1.png);
+}
+
+.about-sec2::after {
+    right: 3%;
+    background-image: url(../images/bookcover2.png);
 }
 
 /* CTA section */
@@ -414,6 +453,7 @@ header .navbar {
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    background-position: bottom;
     z-index: 1;
 }
 
@@ -424,7 +464,7 @@ header .navbar {
     top: 0px;
     width: 100%;
     height: 100%;
-    background: var(--primary-color);
+    background: var(--secondary-color);
     opacity: .9;
     z-index: -1;
 }
@@ -435,7 +475,7 @@ header .navbar {
 
 .cta .cta-content h2 {
     color: #fff;
-    margin: 20px 0px 40px;
+    margin: 0;
 }
 
 .download-btn p {
@@ -446,13 +486,14 @@ header .navbar {
 }
 
 .cta .btn-white:hover {
-    background: var(--secondary-color);
+    background: var(--primary-color);
     color: #fff;
 }
 
 .cta .btn-black:hover {
     color: #fff;
-    background: var(--secondary-color);
+    background: var(--primary-color);
+    box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Testimonials section */
@@ -627,6 +668,11 @@ header .navbar {
     padding: 130px 0px 10px;
     position: relative;
     background: #000000;
+}
+
+.ft_logo img {
+    max-width: 180px;
+    margin-top: -50px;
 }
 
 .footer-mid {
